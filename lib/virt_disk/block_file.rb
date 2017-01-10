@@ -4,7 +4,7 @@ module VirtDisk
 
     def initialize(path)
       @path = path
-      @file = File.open(path)
+      @file = defined?(VirtFS) ? VirtFS::VFile.open(path) : File.open(path)
     end
 
     def block_size
