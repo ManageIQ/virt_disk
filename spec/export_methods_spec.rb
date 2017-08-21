@@ -1,3 +1,4 @@
+require "spec_helper"
 require "virt_disk"
 
 def new_test_class(cname, methods_exported = [], methods_not_exported = [])
