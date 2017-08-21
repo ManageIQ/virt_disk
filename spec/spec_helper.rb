@@ -10,7 +10,7 @@ def log_init
               when 'WARN'  then Logger::WARN
               when 'INFO'  then Logger::INFO
               when 'DEBUG' then Logger::DEBUG
-              else              Logger::OFF
+              else              Logger::ERROR
               end
   LogDecorator.logger = log
 end
