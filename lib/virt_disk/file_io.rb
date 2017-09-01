@@ -20,6 +20,10 @@ module VirtDisk
       @file.size
     end
 
+    def block_size
+      1
+    end
+
     def close
       @file.close
     end
@@ -31,11 +35,15 @@ module VirtDisk
       end
     end
 
+    alias :raw_read :mod_read
+
     def mod_write(buf, start, len)
       @file_lock.synchronize do
         @file.seek start
         @file.write buf, len
       end
     end
+
+    alias :raw_write :mod_write
   end
 end
