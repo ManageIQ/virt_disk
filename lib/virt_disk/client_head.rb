@@ -8,7 +8,7 @@ module VirtDisk
       @up_stream_module = up_stream_module
       @start_byte_addr  = 0
       @size             = @up_stream_module.size
-      @end_byte_addr    = @size
+      @end_byte_addr    = @size - 1
       @seek_pos         = @start_byte_addr
       self.delegate     = @up_stream_module
     end
