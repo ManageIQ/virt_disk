@@ -19,6 +19,7 @@ module VirtDisk
     def size
       @file.size
     end
+    export :size
 
     def close
       @file.close
